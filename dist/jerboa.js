@@ -537,7 +537,17 @@
 	    container.classList.add('feedback-container');
 	    box.appendChild(container);
 
+	    addBoxClass(box, spot);
+
 	    return { box: box, container: container };
+	}
+	function addBoxClass(box, spot) {
+	    var b = box.getBoundingClientRect();
+	    var s1 = "-bottom";
+	    var s2 = "-right";
+	    if (b.left < 220) s2 = "-left";
+	    console.log(s1, s2);
+	    box.classList.add('feedback-box' + s1 + s2);
 	}
 
 	function closeInfoBox() {
@@ -616,7 +626,7 @@
 	                } else {
 	                    // change content
 	                    payload.text = editCommentTextField.textarea.value;
-	                    text.children[0].textContent = payload.text;
+	                    text.children[1].textContent = payload.text;
 	                    container.replaceChild(text, editCommentTextField.container);
 	                    (0, _events.emit)('saveEdittedComment', payload);
 	                }
