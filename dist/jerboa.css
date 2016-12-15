@@ -60,12 +60,39 @@
 .feedback-spot.status-no-action {
   background: yellow;
 }
+.feedback-spot .feedback-box-bottom-left {
+  top: -142px;
+  left: 190px;
+}
+.feedback-spot .feedback-box-bottom-left:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 105px;
+  left: -6px;
+  border: 10px solid transparent;
+  border-right: 10px solid #aaa;
+  margin-left: -15px;
+}
+.feedback-spot .feedback-box-bottom-right {
+  top: -142px;
+  left: -200px;
+}
+.feedback-spot .feedback-box-bottom-right:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 105px;
+  left: 334px;
+  border: 10px solid transparent;
+  border-left: 10px solid #aaa;
+  margin-left: -15px;
+}
 .feedback-spot .feedback-box {
   box-sizing: border-box;
   background: white;
   border: 1px solid #aaa;
   position: relative;
-  top: 100%;
   width: 320px;
   margin-left: -143px;
   margin-top: 40px;
@@ -73,26 +100,6 @@
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
   z-index: 100;
   cursor: default;
-}
-.feedback-spot .feedback-box:before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  border: 10px solid transparent;
-  border-bottom: 10px solid #aaa;
-  margin-left: -15px;
-}
-.feedback-spot .feedback-box:after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: -19px;
-  left: 50%;
-  border: 10px solid transparent;
-  border-bottom: 10px solid white;
-  margin-left: -15px;
 }
 .feedback-spot .feedback-box.toggled {
   display: none;
