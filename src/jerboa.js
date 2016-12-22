@@ -45,6 +45,10 @@ function generatePayload(event) {
 }
 
 function clickListener(event) {
+    const eventWasToggle = event.target.className.includes('toggle-button') || event.target.parentElement.className.includes('toggle-button');
+    if (eventWasToggle) {
+      return;
+    }
     if (!state.active) {
         return;
     }
